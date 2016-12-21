@@ -11,6 +11,8 @@ namespace SQLWebPlatform
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/Libraries/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/mustache").Include("~/Scripts/Libraries/mustache.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/Libraries/jquery-ui-{version}.js"));
 
@@ -23,7 +25,9 @@ namespace SQLWebPlatform
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/Libraries/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                        "~/Content/site.css", 
+                        "~/Content/font-awesome.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
@@ -38,6 +42,13 @@ namespace SQLWebPlatform
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/component").Include("~/Scripts/Components/Component.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/index").Include("~/Scripts/Application/Index.js"));
+            bundles.Add(new ScriptBundle("~/bundles/serverComponent").Include("~/Scripts/Components/Server.js"));
+
+            BundleTable.EnableOptimizations = false;
         }
     }
 }
