@@ -12,5 +12,10 @@ namespace SQLWebPlatform.Controllers
         {
             return View();
         }
+
+        public ActionResult Configure()
+        {
+            return View();
+        }
     }
 }

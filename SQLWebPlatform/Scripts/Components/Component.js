@@ -1,4 +1,11 @@
-﻿function Component(configuration) {
+﻿Handlebars.registerHelper('ifCond', function (v1, v2, options) {
+    if (v1 === v2) {
+        return options.fn(this);
+    }
+    return options.inverse(this);
+});
+
+function Component(configuration) {
     'use strict'
 
     this.configuration = $.extend({
@@ -11,13 +18,15 @@
 
 Component.prototype.mount = function (callback) {
     if (this.configuration.template) {
-        $(this.configuration.container).append(Mustache.render(this.configuration.template, this.configuration.data));
-        if(callback) callback();
+        var template = Handlebars.compile(this.configuration.template);
+        $(this.configuration.container).append(template(this.configuration.data));
+        if (callback) callback($(this.configuration.container));
 
     } else {
         $.get(this.configuration.templateUrl, function (component) {
-            $(this.configuration.container).append(Mustache.render(component, this.configuration.data));
-            if (callback) callback();
+            var template = Handlebars.compile(component);
+            $(this.configuration.container).append(template(this.configuration.data));
+            if (callback) callback($(this.configuration.container));
 
         }.bind(this));
     }

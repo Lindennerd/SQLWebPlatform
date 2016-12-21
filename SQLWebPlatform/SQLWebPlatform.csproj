@@ -40,6 +40,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NDatabase3, Version=3.8.0.13, Culture=neutral, PublicKeyToken=31d8e3cda240c056, processorArchitecture=MSIL">
+      <HintPath>..\packages\NDatabase.3.8.0\lib\net45\NDatabase3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -162,10 +166,11 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\ComponentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\ServerConnectionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ServerConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -246,8 +251,12 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
     <None Include="Scripts\Libraries\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\Application\Configure.js" />
+    <Content Include="Scripts\Application\Helpers.js" />
     <Content Include="Scripts\Application\Index.js" />
     <Content Include="Scripts\Components\Component.js" />
+    <Content Include="Scripts\Components\Form.js" />
+    <Content Include="Scripts\Components\SelectableList.js" />
     <Content Include="Scripts\Components\Server.js" />
     <Content Include="Scripts\Libraries\jquery-1.8.2.js" />
     <Content Include="Scripts\Libraries\jquery-1.8.2.min.js" />
@@ -263,7 +272,6 @@
     <Content Include="Scripts\Libraries\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\Libraries\knockout-2.2.0.js" />
     <Content Include="Scripts\Libraries\modernizr-2.6.2.js" />
-    <Content Include="Scripts\Libraries\mustache.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -293,10 +301,12 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Components\Server.cshtml" />
+    <Content Include="Views\Home\Configure.cshtml" />
+    <Content Include="Views\Components\Form.cshtml" />
+    <Content Include="Views\Components\SelectableList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

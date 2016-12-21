@@ -10,9 +10,7 @@ namespace SQLWebPlatform
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/Libraries/jquery-{version}.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/mustache").Include("~/Scripts/Libraries/mustache.js"));
-
+            
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/Libraries/jquery-ui-{version}.js"));
 
@@ -44,9 +42,14 @@ namespace SQLWebPlatform
                         "~/Content/themes/base/jquery.ui.theme.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/component").Include("~/Scripts/Components/Component.js"));
+            bundles.Add(new ScriptBundle("~/bundles/helpers").Include("~/Scripts/Application/Helpers.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/index").Include("~/Scripts/Application/Index.js"));
+            bundles.Add(new ScriptBundle("~/bundles/configure").Include("~/Scripts/Application/Configure.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/serverComponent").Include("~/Scripts/Components/Server.js"));
+            bundles.Add(new ScriptBundle("~/bundles/formComponent").Include("~/Scripts/Components/Form.js"));
+            bundles.Add(new ScriptBundle("~/bundles/selectableListComponent").Include("~/Scripts/Components/SelectableList.js"));
 
             BundleTable.EnableOptimizations = false;
         }

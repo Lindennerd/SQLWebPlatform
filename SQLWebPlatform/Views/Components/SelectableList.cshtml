@@ -1,0 +1,16 @@
+﻿<div class="w3-container">
+    <h3>{{title}}</h3>
+</div>
+<ul class="w3-ul w3-hoverable">
+    {{#ifCond items.length 0}}
+        <li>Nenhum item para exibir</li>    
+    {{else}}
+        {{#each items}}
+            {{#if item}}
+                <li>{{item}}</li>
+   
+            {{/if}}
+        {{/each}}
+    {{/ifCond}}
+
+</ul>

@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/mustache")
+    @Scripts.Render("~/bundles/helpers")
     @Scripts.Render("~/bundles/component")
     @RenderSection("scripts", required: false)
 </head>
 <body>
     <header>
         <ul class="w3-navbar w3-light-grey w3-border">
-            <li><a class="w3-green" href="#"><i class="fa fa-home"></i></a></li>
+            <li><a class="w3-green" href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i></a></li>
             <li class="w3-right"><a href="#"><i class="fa fa-sign-in"></i></a></li>
-            <li class="w3-right"><a href="#"><i class="fa fa-wrench"></i></a></li>
+            <li class="w3-right"><a href="@Url.Action("Configure", "Home")"><i class="fa fa-wrench"></i></a></li>
         </ul>
     </header>
     @RenderBody()

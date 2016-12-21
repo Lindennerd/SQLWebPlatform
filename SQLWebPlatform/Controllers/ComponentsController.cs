@@ -13,5 +13,14 @@ namespace SQLWebPlatform.Controllers
             return PartialView("~/Views/Components/Server.cshtml");
         }
 
+        public ActionResult FormComponent()
+        {
+            return PartialView("~/Views/Components/Form.cshtml");
+        }
+
+        public ActionResult SelectableListComponent()
+        {
+            return PartialView("~/Views/Components/SelectableList.cshtml");
+        }
     }
 }
