@@ -1,0 +1,15 @@
+﻿<div class="w3-accordion w3-card-4">
+    <button id="collapse-button-{{id}}" class="w3-btn-block w3-left-align w3-{{color}}">
+        {{componentName}}
+    </button>
+    <div id="collapse-content-{{id}}" class="w3-accordion-content">
+        {{#ifCond items.length 0}}
+            <p>Nenhum item a ser exibido</p>
+        {{else}}
+            {{#each items}}
+            <a href="" data-target="{{value}}">{{displayName}}</a>
+        {{/each}}              
+            {{/ifCond}}
+        
+    </div>
+</div>

@@ -11,38 +11,37 @@ namespace SQLWebPlatform.Controllers
 {
     public class ServerConnectionController : ApiController
     {
-        // GET api/serverconnection
         public IEnumerable<ServerConnection> Get()
         {
             try
             {
-                using (var odb = OdbFactory.Open(@"e:\1\SQLServerClient.db"))
-                {
-                    return odb.QueryAndExecute<ServerConnection>();
-                }
+                return Repository.ServerConnection.Get();
             }
             catch (Exception ex)
             {
                 Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
-                throw;
+                return null;
             }
         }
 
-        // GET api/serverconnection/5
-        public ServerConnection Get(int id)
+        public ServerConnection Get(string name)
         {
-            return new ServerConnection();
+            try
+            {
+                return Repository.ServerConnection.Get(name);
+            }
+            catch (Exception ex)
+            {
+                Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+                return null;
+            }
         }
 
-        // POST api/serverconnection
         public HttpResponseMessage  Post([FromBody]ServerConnection value)
         {
             try
             {
-                using (var odb = OdbFactory.Open(@"e:\1\SQLServerClient.db"))
-                {
-                    odb.Store(value);
-                }
+                Repository.ServerConnection.Add(value);
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception ex)

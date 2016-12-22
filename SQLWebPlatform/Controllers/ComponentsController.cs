@@ -8,9 +8,9 @@ namespace SQLWebPlatform.Controllers
 {
     public class ComponentsController : Controller
     {
-        public ActionResult ServerComponent()
+        public ActionResult CollapseComponent()
         {
-            return PartialView("~/Views/Components/Server.cshtml");
+            return PartialView("~/Views/Components/Collapse.cshtml");
         }
 
         public ActionResult FormComponent()
@@ -21,6 +21,16 @@ namespace SQLWebPlatform.Controllers
         public ActionResult SelectableListComponent()
         {
             return PartialView("~/Views/Components/SelectableList.cshtml");
+        }
+
+        public ActionResult DropdownComponent()
+        {
+            return PartialView("~/Views/Components/Dropdown.cshtml");
+        }
+
+        public ActionResult TreeViewComponent()
+        {
+            return PartialView("~/Views/Components/TreeView.cshtml");
         }
     }
 }

@@ -12,22 +12,28 @@ function Component(configuration) {
         container: '#App',
         template: null,
         templateUrl: null,
-        data: null
-    }, configuration, true)
+        data: null,
+        append: false
+    }, configuration, true);
+
+}
+
+Component.prototype.render = function (template, config, callback) {
+    var template = Handlebars.compile(template);
+    if ($(config.container).children().length > 0 && !config.append) {
+        $(config.container).children().remove();
+    }
+    $(this.configuration.container).append(template(config.data));
+    if (callback) callback($(config.container));
 }
 
 Component.prototype.mount = function (callback) {
     if (this.configuration.template) {
-        var template = Handlebars.compile(this.configuration.template);
-        $(this.configuration.container).append(template(this.configuration.data));
-        if (callback) callback($(this.configuration.container));
+        this.render(this.configuration.template, this.configuration, callback);
 
     } else {
         $.get(this.configuration.templateUrl, function (component) {
-            var template = Handlebars.compile(component);
-            $(this.configuration.container).append(template(this.configuration.data));
-            if (callback) callback($(this.configuration.container));
-
+            this.render(component, this.configuration, callback);
         }.bind(this));
     }
 }

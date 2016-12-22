@@ -1,0 +1,12 @@
+﻿<div class="w3-dropdown-hover">
+  <button class="w3-btn w3-green">{{title}}</button>
+  <div class="w3-dropdown-content w3-border">
+      {{#ifCond items.length 0}}
+         <p>Nenhum item para exibir</p>
+      {{else}}
+              {{#each items}}
+                <a href="" data-target="{{value}}">{{displayName}}</a>
+              {{/each}}
+      {{/ifCond}}
+  </div>
+</div>

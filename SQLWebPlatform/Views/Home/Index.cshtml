@@ -1,14 +1,19 @@
 ﻿<div class="w3-row">
     <div class="w3-col m4 l3">
-        <div id="servers">
+
+        <nav class="w3-sidenav w3-light-grey w3-card-2" style="width: 25em">
+            <div id="servers"></div>
+             <div id="databases"></div>
             
-        </div>
+        </nav>
+       
     </div>
     <div class="w3-col m8 l9">
         teste
     </div>
 </div>
 
-@Scripts.Render("~/bundles/serverComponent")
-@Scripts.Render("~/bundles/selectableListComponent")
+@Scripts.Render("~/bundles/collapseComponent")
+@Scripts.Render("~/bundles/dropdownComponent")
+@Scripts.Render("~/bundles/treeviewComponent")
 @Scripts.Render("~/bundles/index")

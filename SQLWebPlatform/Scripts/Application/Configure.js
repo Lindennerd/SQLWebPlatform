@@ -7,6 +7,7 @@
             id: 'configuration-form',
             fields: [
                 { name: 'serverName', id: 'serverName', type: 'text', label: 'Nome do Servidor' },
+                { name: 'server', id: 'server', type: 'text', label: 'Conexão do Servidor' },
                 {
                     name: 'authenticationType',
                     label: 'Tipo de Autenticação',
