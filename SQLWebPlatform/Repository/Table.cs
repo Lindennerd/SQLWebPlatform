@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
 
 namespace SQLWebPlatform.Models
 {
-    public class Database
+    public class Table
     {
         public string Name { get; set; }
+
         public short ID { get; set; }
-        public DateTime CreationDate { get; set; }
-        public List<Table> Tables { get; set; }
     }
 }

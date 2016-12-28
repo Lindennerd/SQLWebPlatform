@@ -13,8 +13,21 @@ namespace SQLWebPlatform.Controllers
         public JsonResult Connect(string serverName)
         {
             var serverConnInfo = Repository.ServerConnection.Get(serverName);
-            var server = new Models.Server { Connection = new SqlConnection(serverConnInfo.GetConnectionString()) };
-            return Json( new { databases = server.GetDatabases() }, JsonRequestBehavior.AllowGet );
+            var server = new Models.Server { 
+                Connection = new SqlConnection(serverConnInfo.GetConnectionString()), 
+                ServerName = serverName,
+                ConnectionInfo = serverConnInfo,
+
+            };
+            Session.Add("ConnectedServer", server);
+            return Json( new { databases = Repository.Server.GetDatabases(server.Connection) }, JsonRequestBehavior.AllowGet );
+        }
+
+        public JsonResult GetTables(string databaseName)
+        {
+            var server = Session["ConnectedServer"] as Models.Server;
+            var databaseInfo = Repository.Database.Get(databaseName, server);
+            return Json(new { data = databaseInfo.Tables }, JsonRequestBehavior.AllowGet);
         }
 
     }

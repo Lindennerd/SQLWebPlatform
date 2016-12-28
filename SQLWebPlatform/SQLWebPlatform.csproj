@@ -175,8 +175,10 @@
     <Compile Include="Models\Server.cs" />
     <Compile Include="Models\ServerConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Database.cs" />
     <Compile Include="Repository\Server.cs" />
     <Compile Include="Repository\ServerConnection.cs" />
+    <Compile Include="Repository\Table.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -258,11 +260,14 @@
     <None Include="Scripts\Libraries\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\Application\Configure.js" />
     <Content Include="Scripts\Application\Index.js" />
+    <Content Include="Scripts\Application\Sidebar.js" />
+    <Content Include="Scripts\Application\Tabs.js" />
     <Content Include="Scripts\Components\Component.js" />
     <Content Include="Scripts\Components\Dropdown.js" />
     <Content Include="Scripts\Components\Form.js" />
     <Content Include="Scripts\Components\SelectableList.js" />
     <Content Include="Scripts\Components\Collapse.js" />
+    <Content Include="Scripts\Components\TabItem.js" />
     <Content Include="Scripts\Components\TreeView.js" />
     <Content Include="Scripts\Libraries\jquery-1.8.2.js" />
     <Content Include="Scripts\Libraries\jquery-1.8.2.min.js" />
@@ -312,6 +317,7 @@
     <Content Include="Views\Components\SelectableList.cshtml" />
     <Content Include="Views\Components\Dropdown.cshtml" />
     <Content Include="Views\Components\TreeView.cshtml" />
+    <Content Include="Views\Components\Tab.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

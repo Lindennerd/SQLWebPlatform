@@ -32,5 +32,10 @@ namespace SQLWebPlatform.Controllers
         {
             return PartialView("~/Views/Components/TreeView.cshtml");
         }
+
+        public ActionResult TabComponent()
+        {
+            return PartialView("~/Views/Components/Tab.cshtml");
+        }
     }
 }

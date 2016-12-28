@@ -17,7 +17,7 @@ Collapse.prototype.mount = function (onClick) {
     Component.prototype.mount.call(this, function (container) {
         $('a', container).click(function (ev) {
             ev.preventDefault();
-            if (onClick) onClick($(ev.target).attr('data-target'));
+            if (onClick) onClick(ev.target);
         });
 
         $('#collapse-button-' + self.configuration.data.id).click(function (ev) {
