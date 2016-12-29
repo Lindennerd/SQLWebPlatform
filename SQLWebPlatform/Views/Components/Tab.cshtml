@@ -1,4 +1,8 @@
-﻿<li>
-    <a href style="float: left" id="{{id}}">{{title}}</a>
-    <a href style="float: left" id="close-{{id}}">X</a>
-</li> 
+﻿<div class="tab" id="tab-{{id}}">
+    <input type="radio" id={{id}} name="tab-group" checked>
+    <label for="{{id}}">{{title}}   <a href id="close-{{id}}">&times</a></label>
+
+    <div class="content">
+        stuff {{id}}
+    </div>
+</div>

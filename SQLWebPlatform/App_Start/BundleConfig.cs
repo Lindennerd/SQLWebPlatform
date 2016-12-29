@@ -46,7 +46,7 @@ namespace SQLWebPlatform
             bundles.Add(new ScriptBundle("~/bundles/index").Include("~/Scripts/Application/Index.js"));
             bundles.Add(new ScriptBundle("~/bundles/configure").Include("~/Scripts/Application/Configure.js"));
             bundles.Add(new ScriptBundle("~/bundles/Sidebar").Include("~/Scripts/Application/SideBar.js"));
-            bundles.Add(new ScriptBundle("~/bundles/Tabs").Include("~/Scripts/Application/Tabs.js"));
+            bundles.Add(new ScriptBundle("~/bundles/TabsPanel").Include("~/Scripts/Application/Tabs.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/collapseComponent").Include("~/Scripts/Components/Collapse.js"));
             bundles.Add(new ScriptBundle("~/bundles/formComponent").Include("~/Scripts/Components/Form.js"));
